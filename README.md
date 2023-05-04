@@ -3,9 +3,9 @@ DESCRIZIONE PROGETTO FIRSTDB
 1)COME CREARE UN PROGETTO CON DOTNET NEW CONSOLE \
 -Aprire una nuova cartella vuota già creata con visual studio code
 
-![image](https://user-images.githubusercontent.com/116790994/235083107-2d1af128-d52f-44e2-af16-2ee77026ef4f.png)
+![image](https://user-images.githubusercontent.com/116790994/235083107-2d1af128-d52f-44e2-af16-2ee77026ef4f.png 250x250)
 
--aprire il terminale\  
+-aprire il terminale
 -digitare: "dotnet new console"
 
 2)COME INCLUDERE LA LIBRERIA SQLITE
@@ -15,23 +15,23 @@ DESCRIZIONE PROGETTO FIRSTDB
 https://www.sqlitetutorial.net/sqlite-sample-database/ 
 
 4)CODICE NECESSARIO PER VISUALIZZARE TUTTI GLI ARTISTI 
+```
+using SQLite; 
+//connessione al database 
 
-using SQLite; <br />
-//connessione al database <br />
+SQLiteConnection cn1 = new SQLiteConnection("chinook.db"); 
 
-SQLiteConnection cn1 = new SQLiteConnection("chinook.db"); <br />
+var tblArtists = cn1.Query<Artist>("select * from artists");
 
-var tblArtists = cn1.Query<Artist>("select * from artists"); <br />
+Console.WriteLine( $"in questa tabella cisono {tblArtists.Count} record");
 
-Console.WriteLine( $"in questa tabella cisono {tblArtists.Count} record"); <br />
-
-//fine main... inizio dichiarazioni classi----------------------- <br />
-public class Artist <br />
-{ <br />
-    public int ArtistId{get;set;} <br />
-    public string Name{get;set;} <br />
-} <br />
-
+//fine main... inizio dichiarazioni classi----------------------- 
+public class Artist 
+{ 
+    public int ArtistId{get;set;} 
+    public string Name{get;set;} 
+} 
+```
 
 
 
